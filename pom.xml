@@ -11,8 +11,8 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <jdk>1.8</jdk>
     </properties>
-
 
 
     <dependencies>
@@ -37,7 +37,44 @@
             <version>11.4.1</version>
         </dependency>
 
-
     </dependencies>
+    <build>
+    <plugins>
+    <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+            <archive>
+                <manifest>
+                    <mainClass>main</mainClass>
+                    <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                    <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                </manifest>
+                <manifestEntries>
+                    <artifactId>main</artifactId>
+                    <Implementation-Version>1</Implementation-Version>
+                </manifestEntries>
+            </archive>
+            <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <finalName>mytunner</finalName>
+            <appendAssemblyId>false</appendAssemblyId>
+
+        </configuration>
+        <executions>
+            <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                    <goal>single</goal>
+                </goals>
+            </execution>
+
+        </executions>
+
+    </plugin>
+    </plugins>
+    </build>
+
 
 </project>
