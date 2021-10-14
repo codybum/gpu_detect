@@ -17,25 +17,7 @@
 
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/org.jcuda/jcuda -->
-        <dependency>
-            <groupId>org.jcuda</groupId>
-            <artifactId>jcuda</artifactId>
-            <version>11.4.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.jcuda</groupId>
-                    <artifactId>jcuda-natives</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.jcuda/jcuda-natives -->
-        <dependency>
-            <groupId>org.jcuda</groupId>
-            <artifactId>jcuda-natives</artifactId>
-            <version>11.4.1</version>
-        </dependency>
 
     </dependencies>
     <build>
